@@ -6,6 +6,8 @@ Este paquete de Go proporciona una interfaz de cliente simple para interactuar c
 
 Permite obtener información de seguimiento de un paquete usando su número de guía.
 
+Tambien permite obtener la información sobre las oficinas de zoom (con sus coordenadas, teléfono, horario de atención, etc).
+
 La información obtenida es similar a la que se consigue en la página:
 
 
@@ -13,7 +15,7 @@ La información obtenida es similar a la que se consigue en la página:
 ### Requisitos
 Para usar este paquete, necesitará:
 
-- Go versión 1.16 o posterior
+- Go versión 1.20 o posterior
 
 
 ### Instalación
@@ -43,6 +45,9 @@ func main() {
 		return
 	}
 	fmt.Printf("Información de seguimiento: %+v\n", info)
+
+	offices, err := c.GetOffices()
+	fmt.Printf("Información de las oficinas: %+v\n", offices)
 }
 ```
 
